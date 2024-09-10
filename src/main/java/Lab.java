@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class Lab {
     /**
      * An exception is an unexpected event that occurs during our program.
@@ -18,7 +20,22 @@ public class Lab {
      * This also means that you should NOT write a try/catch block in this method, as the tests are expecting to have
      * a method thrown to it. A try/catch block would handle the exception within the method.
      */
-    public void mustThrow() {
-
+    public class NegativeNumberException extends Exception {
+        public NegativeNumberException(String message) {
+            super(message);
+        }
     }
+  
+        int L=5;
+        int W=-5;
+        int area = L*W;
+        public void mustThrow() throws NegativeNumberException{
+          
+            if (area < 0) {
+    		    throw new NegativeNumberException("You cannot have a negative number"); 
+        
+                    }
+                
+    }
+
 }
